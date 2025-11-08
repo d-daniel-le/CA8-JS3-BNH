@@ -110,88 +110,66 @@
         compRandChoice = Math.floor(Math.random() * compCharacter.length);
         console.log(`The computer chose ${compCharacter[compRandChoice]}!`);
 
-        // Determine results when user input 'Bear'
-        if (userCharacter.toLowerCase() === 'bear'){
-          switch (compCharacter[compRandChoice].toLowerCase()){
-            case 'bear':
-              results = 'You Tie!!';
-              document.getElementById('results').innerHTML = 'You Tie!!';
-              console.log('You Tie!!');
-              break;
-            case 'ninja':
-              results = 'You Win!!';
-              document.getElementById('results').innerHTML = 'You Win!!';
-              console.log('You Win!!');
-              break;
-            case 'hunter':
-              results = 'Computer Wins!!';
-              document.getElementById('results').innerHTML = 'Computer Wins!!';
-              console.log('Computer Wins!!');
-              break;
-            default:
-              results = 'Invalid Character from Computer!!';
-              document.getElementById('results').innerHTML = 'Invalid Character from Computer!!';
-              console.log('Invalid Character from Computer!!');
-              break;
-          }
-        }
-        // Determine results when user input 'Ninja'
-        else if (userCharacter.toLowerCase() === 'ninja'){
-          switch (compCharacter[compRandChoice].toLowerCase()){
-            case 'bear':
-              results = 'Computer Wins!!';
-              document.getElementById('results').innerHTML = 'Computer Wins!!';
-              console.log('Computer Wins!!');
-              break;
-            case 'ninja':
-              results = 'You Tie!!';
-              document.getElementById('results').innerHTML = 'You Tie!!';
-              console.log('You Tie!!');
-              break;
-            case 'hunter':
-              results = 'You Win!!';
-              document.getElementById('results').innerHTML = 'You Win!!';
-              console.log('You Win!!');
-              break;
-            default:
-              results = 'Invalid Character from Computer!!';
-              document.getElementById('results').innerHTML = 'Invalid Character from Computer!!';
-              console.log('Invalid Character from Computer!!');
-            break;
-          }
-        }
 
-        // Determine results when user input 'Hunter'
-        else if (userCharacter.toLowerCase() === 'hunter'){
-          switch (compCharacter[compRandChoice].toLowerCase()){
-            case 'bear':
-              results = 'You Win!!';
-              document.getElementById('results').innerHTML = 'You Win!!';
-              console.log('You Win!!');
-              break;
-            case 'ninja':
-              results = 'Computer Wins!!';
-              document.getElementById('results').innerHTML = 'Computer Wins!!';
-              console.log('Computer Wins!!');
-              break;
-            case 'hunter':
+        switch (userCharacter.toLowerCase()){
+
+          // Determine results when user input 'Bear'
+          case 'bear':
+            if(compCharacter[compRandChoice].toLowerCase() === 'bear'){
               results = 'You Tie!!';
               document.getElementById('results').innerHTML = 'You Tie!!';
               console.log('You Tie!!');
-              break;
-            default:
-              results = 'Invalid Character from Computer!!';
-              document.getElementById('results').innerHTML = 'Invalid Character from Computer!!';
-              console.log('Invalid Character from Computer!!');
+            }
+            else if (compCharacter[compRandChoice].toLowerCase() === 'ninja'){
+              results = 'You Win!!';
+              document.getElementById('results').innerHTML = 'You Win!!';
+              console.log('You Win!!');
+            }
+            else{
+              results = 'Computer Wins!!';
+              document.getElementById('results').innerHTML = 'Computer Wins!!';
+              console.log('Computer Wins!!');
+            }
             break;
-          }
-        }
+            
+          // Determine results when user input 'Ninja'
+          case 'ninja':
+            if (compCharacter[compRandChoice].toLowerCase() === 'bear'){
+              results = 'Computer Wins!!';
+              document.getElementById('results').innerHTML = 'Computer Wins!!';
+              console.log('Computer Wins!!');
+            }
+            else if (compCharacter[compRandChoice].toLowerCase() === 'ninja'){
+              results = 'You Tie!!';
+              document.getElementById('results').innerHTML = 'You Tie!!';
+              console.log('You Tie!!');
+            }
+            else{
+              results = 'You Win!!';
+              document.getElementById('results').innerHTML = 'You Win!!';
+              console.log('You Win!!');
+            }
+            break;
 
-        // Let the user know that their input was invalid
-        else{
-          invalidUserInput = 'Invalid Character Input. Too Bad!!';
-          document.getElementById('results').innerHTML = 'Invalid Character Input. Too Bad!!';
-          console.log('Invalid Character Input. Too Bad!!');
+          // Determine results when user input 'Hunter'
+          default:
+            if (compCharacter[compRandChoice].toLowerCase() === 'bear'){
+              results = 'You Win!!';
+              document.getElementById('results').innerHTML = 'You Win!!';
+              console.log('You Win!!');
+            }
+            else if (compCharacter[compRandChoice].toLowerCase() === 'ninja'){
+              results = 'Computer Wins!!';
+              document.getElementById('results').innerHTML = 'Computer Wins!!';
+              console.log('Computer Wins!!');
+            }
+            else{
+              results = 'You Tie!!';
+              document.getElementById('results').innerHTML = 'You Tie!!';
+              console.log('You Tie!!');
+
+            }
+
         }
 
         compCharacter.forEach(character =>{
